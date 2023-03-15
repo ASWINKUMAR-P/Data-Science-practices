@@ -1,0 +1,52 @@
+1. Import default packages along with warning package
+
+2. Upload dataset
+
+	pd.read_csv("filename.csv")
+	pd.read_excel("filename.xlsx")
+
+3. Finding and replacing null values
+
+	ds.isnull()
+	ds.fillna(method='ffill',iplace=True)
+
+4. Splitting dataset for training and testing
+
+	from sklearn.model_selection import train_test_split
+	x_train,x_test,y_train,y_test =  train_test_split(x,y,test_size=0.2,random_state=0)
+
+5. Importing Machine Learning model
+
+	from sklearn.linear_model import LogisticRegression
+	lg = LogisticRegression()
+	lg.fit(x_train,y_train)
+
+6. Model Evaluvation
+
+	y_lg  = lg.predict(x_test)
+	print(y_lg)
+
+7. Model accuracy
+
+	from sklearn.metrics import accuracy_score
+	a = accuracy_score(y_test,y_lg)*100
+	print(a)
+
+8. Parameters evaluvation
+
+	1.Precision
+	2.Recall
+	3.f1_score
+	4.confusion_matrix
+	5.accuracy
+	6.error_rate
+
+	from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix, accuracy_score
+	
+	Different types of error rate
+
+		1. MSE - Mean Square Error 
+		2. RMSE - Root Mean Square Error
+		3. AUC - Area Under Curve
+	
+
